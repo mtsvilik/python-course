@@ -2,8 +2,8 @@ import smtplib
 import datetime as dt
 import random
 
-EMAIL = "maryia.tsvilik@gmail.com"
-PASSWORD = "fzkjalbvkllwdgpt"
+EMAIL = "my_email"
+PASSWORD = "my_password"
 now = dt.datetime.now()
 weekday = now.weekday()
 
@@ -17,33 +17,13 @@ if weekday == 4:
         connection.starttls()
         connection.login(EMAIL, PASSWORD)
         connection.sendmail(from_addr=EMAIL,
-                            to_addrs="mtsvilik@solvd.com",
+                            to_addrs="my_email",
                             msg=f"Subject:Friday Motivation\n\n{quote}")
 
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
         connection.login(EMAIL, PASSWORD)
         connection.sendmail(from_addr=EMAIL,
-                            to_addrs="opapina@solvd.com",
+                            to_addrs="email",
                             msg=f"Subject:Friday Motivation\n\n{quote}")
 
-    with smtplib.SMTP("smtp.gmail.com") as connection:
-        connection.starttls()
-        connection.login(EMAIL, PASSWORD)
-        connection.sendmail(from_addr=EMAIL,
-                            to_addrs="mbelyuk@solvd.com",
-                            msg=f"Subject:Friday Motivation\n\n{quote}")
-
-    with smtplib.SMTP("smtp.gmail.com") as connection:
-        connection.starttls()
-        connection.login(EMAIL, PASSWORD)
-        connection.sendmail(from_addr=EMAIL,
-                            to_addrs="dmelnikova@solvd.com",
-                            msg=f"Subject:Friday Motivation\n\n{quote}")
-
-    with smtplib.SMTP("smtp.gmail.com") as connection:
-        connection.starttls()
-        connection.login(EMAIL, PASSWORD)
-        connection.sendmail(from_addr=EMAIL,
-                            to_addrs="amuravskiy@solvd.com",
-                            msg=f"Subject:Friday Motivation\n\n{quote}")
