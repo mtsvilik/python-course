@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title>AutomationPytestReport.html</title>
+    <title>AutomatonPytestReport.html</title>
     <link href="assets/style.css" rel="stylesheet" type="text/css"/></head>
   <body onLoad="init()">
     <script>/* This Source Code Form is subject to the terms of the Mozilla Public
@@ -252,10 +252,10 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
     notFoundMessage.hidden = !allRowsHidden;
 }
 </script>
-    <h1>AutomationPytestReport.html</h1>
-    <p>Report generated on 12-Jul-2023 at 12:42:44 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <h1>AutomatonPytestReport.html</h1>
+    <p>Report generated on 12-Jul-2023 at 17:16:02 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Summary</h2>
-    <p>4 tests ran in 20.17 seconds. </p>
+    <p>4 tests ran in 31.97 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">4 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
@@ -270,8 +270,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">tests/test_login.py::TestLogin::test_valid_credentials[chrome]</td>
-          <td class="col-duration">4.76</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_login_with_valid_credentials[chrome]</td>
+          <td class="col-duration">8.02</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -281,19 +281,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">tests/test_login.py::TestLogin::test_valid_credentials[firefox]</td>
-          <td class="col-duration">5.43</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  firefox
-<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">tests/test_login.py::TestLogin::test_invalid_credentials[chrome]</td>
-          <td class="col-duration">5.08</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_login_with_invalid_credentials[chrome]</td>
+          <td class="col-duration">5.32</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -303,11 +292,22 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">tests/test_login.py::TestLogin::test_invalid_credentials[firefox]</td>
-          <td class="col-duration">4.86</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_cart_button_is_clickable[chrome]</td>
+          <td class="col-duration">4.92</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  firefox
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  chrome
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_product_is_added_to_cart[chrome]</td>
+          <td class="col-duration">13.64</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  chrome
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
 <br/></div></td></tr></tbody></table></body></html>

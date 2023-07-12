@@ -2,3 +2,8 @@
 .DS_Store
 geckodriver.log
 .pytest_cache
+test_data.py
+venv
+allure_report
+assets
+AutomationPytestReport.html
