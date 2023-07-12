@@ -7,3 +7,4 @@ venv
 allure_report
 assets
 AutomationPytestReport.html
+__pycache__/
