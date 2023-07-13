@@ -253,10 +253,10 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>AutomatonPytestReport.html</h1>
-    <p>Report generated on 12-Jul-2023 at 17:16:02 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 13-Jul-2023 at 17:43:12 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Summary</h2>
-    <p>4 tests ran in 31.97 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">4 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>14 tests ran in 145.07 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">12 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">2 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -267,22 +267,55 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_login_with_invalid_credentials[firefox]</td>
+          <td class="col-duration">15.37</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;amazon_web.tests.test_amazon_web.TestAmazonWeb object at 0x10292ee90&gt;<br/><br/>    def test_login_with_invalid_credentials(self):<br/>        home_page = HomePage(self.driver)<br/>&gt;       login_page = home_page.click_sign_in_button()<br/><br/>test_amazon_web.py:18: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>../pages/home_page.py:22: in click_sign_in_button<br/>    self.click(self.sign_in_button)<br/>../pages/base_page.py:11: in click<br/>    WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).click()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.support.wait.WebDriverWait (session=&quot;2688cb8e-13cf-4555-958d-aec1aeaf64f3&quot;)&gt;<br/>method = &lt;function visibility_of_element_located.&lt;locals&gt;._predicate at 0x10292b380&gt;<br/>message = &#x27;&#x27;<br/><br/>    def until(self, method, message: str = &quot;&quot;):<br/>        &quot;&quot;&quot;Calls the method provided with the driver as an argument until the \<br/>        return value does not evaluate to ``False``.<br/>    <br/>        :param method: callable(WebDriver)<br/>        :param message: optional message for :exc:`TimeoutException`<br/>        :returns: the result of the last call to `method`<br/>        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs<br/>        &quot;&quot;&quot;<br/>        screen = None<br/>        stacktrace = None<br/>    <br/>        end_time = time.monotonic() + self._timeout<br/>        while True:<br/>            try:<br/>                value = method(self._driver)<br/>                if value:<br/>                    return value<br/>            except self._ignored_exceptions as exc:<br/>                screen = getattr(exc, &quot;screen&quot;, None)<br/>                stacktrace = getattr(exc, &quot;stacktrace&quot;, None)<br/>            time.sleep(self._poll)<br/>            if time.monotonic() &gt; end_time:<br/>                break<br/>&gt;       raise TimeoutException(message, screen, stacktrace)<br/><span class="error">E       selenium.common.exceptions.TimeoutException: Message: </span><br/><span class="error">E       Stacktrace:</span><br/><span class="error">E       RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8</span><br/><span class="error">E       WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:182:5</span><br/><span class="error">E       NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:394:5</span><br/><span class="error">E       element.find/&lt;/&lt;@chrome://remote/content/marionette/element.sys.mjs:275:16</span><br/><br/>../../venv/lib/python3.11/site-packages/selenium/webdriver/support/wait.py:95: TimeoutException<br/> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  firefox
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_cart_button_is_clickable[chrome]</td>
+          <td class="col-duration">14.12</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;amazon_web.tests.test_amazon_web.TestAmazonWeb object at 0x10292fa90&gt;<br/><br/>    def test_cart_button_is_clickable(self):<br/>        home_page = HomePage(self.driver)<br/>&gt;       shopping_cart_page = home_page.click_shopping_cart_button()<br/><br/>test_amazon_web.py:25: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>../pages/home_page.py:26: in click_shopping_cart_button<br/>    self.click(self.shopping_cart_button)<br/>../pages/base_page.py:11: in click<br/>    WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).click()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.support.wait.WebDriverWait (session=&quot;7ea09ebe2583b6876eb59723f12251a3&quot;)&gt;<br/>method = &lt;function visibility_of_element_located.&lt;locals&gt;._predicate at 0x10297d800&gt;<br/>message = &#x27;&#x27;<br/><br/>    def until(self, method, message: str = &quot;&quot;):<br/>        &quot;&quot;&quot;Calls the method provided with the driver as an argument until the \<br/>        return value does not evaluate to ``False``.<br/>    <br/>        :param method: callable(WebDriver)<br/>        :param message: optional message for :exc:`TimeoutException`<br/>        :returns: the result of the last call to `method`<br/>        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs<br/>        &quot;&quot;&quot;<br/>        screen = None<br/>        stacktrace = None<br/>    <br/>        end_time = time.monotonic() + self._timeout<br/>        while True:<br/>            try:<br/>                value = method(self._driver)<br/>                if value:<br/>                    return value<br/>            except self._ignored_exceptions as exc:<br/>                screen = getattr(exc, &quot;screen&quot;, None)<br/>                stacktrace = getattr(exc, &quot;stacktrace&quot;, None)<br/>            time.sleep(self._poll)<br/>            if time.monotonic() &gt; end_time:<br/>                break<br/>&gt;       raise TimeoutException(message, screen, stacktrace)<br/><span class="error">E       selenium.common.exceptions.TimeoutException: Message: </span><br/><span class="error">E       Stacktrace:</span><br/><span class="error">E       0   chromedriver                        0x00000001005f7f48 chromedriver + 4226888</span><br/><span class="error">E       1   chromedriver                        0x00000001005f04f4 chromedriver + 4195572</span><br/><span class="error">E       2   chromedriver                        0x0000000100234d68 chromedriver + 281960</span><br/><span class="error">E       3   chromedriver                        0x000000010026ffc8 chromedriver + 524232</span><br/><span class="error">E       4   chromedriver                        0x00000001002a6c58 chromedriver + 748632</span><br/><span class="error">E       5   chromedriver                        0x0000000100263f1c chromedriver + 474908</span><br/><span class="error">E       6   chromedriver                        0x0000000100264ef4 chromedriver + 478964</span><br/><span class="error">E       7   chromedriver                        0x00000001005b959c chromedriver + 3970460</span><br/><span class="error">E       8   chromedriver                        0x00000001005bd6f0 chromedriver + 3987184</span><br/><span class="error">E       9   chromedriver                        0x00000001005c35b4 chromedriver + 4011444</span><br/><span class="error">E       10  chromedriver                        0x00000001005be2fc chromedriver + 3990268</span><br/><span class="error">E       11  chromedriver                        0x00000001005961c0 chromedriver + 3826112</span><br/><span class="error">E       12  chromedriver                        0x00000001005da088 chromedriver + 4104328</span><br/><span class="error">E       13  chromedriver                        0x00000001005da1e0 chromedriver + 4104672</span><br/><span class="error">E       14  chromedriver                        0x00000001005e9f28 chromedriver + 4169512</span><br/><span class="error">E       15  libsystem_pthread.dylib             0x000000018d1f3fa8 _pthread_start + 148</span><br/><span class="error">E       16  libsystem_pthread.dylib             0x000000018d1eeda0 thread_start + 8</span><br/><br/>../../venv/lib/python3.11/site-packages/selenium/webdriver/support/wait.py:95: TimeoutException<br/> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  chrome
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_login_with_valid_credentials[chrome]</td>
-          <td class="col-duration">8.02</td>
+          <td class="col-duration">11.78</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  chrome
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_login_with_valid_credentials[firefox]</td>
+          <td class="col-duration">9.86</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  firefox
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_login_with_invalid_credentials[chrome]</td>
-          <td class="col-duration">5.32</td>
+          <td class="col-duration">5.36</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -292,22 +325,99 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_cart_button_is_clickable[chrome]</td>
-          <td class="col-duration">4.92</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_cart_button_is_clickable[firefox]</td>
+          <td class="col-duration">6.49</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  chrome
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  firefox
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_product_is_added_to_cart[chrome]</td>
-          <td class="col-duration">13.64</td>
+          <td class="col-duration">13.57</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  chrome
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_product_is_added_to_cart[firefox]</td>
+          <td class="col-duration">16.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  firefox
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_increase_product_in_cart[chrome]</td>
+          <td class="col-duration">13.89</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  chrome
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_increase_product_in_cart[firefox]</td>
+          <td class="col-duration">14.22</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  firefox
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_change_language[chrome]</td>
+          <td class="col-duration">6.39</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  chrome
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_change_language[firefox]</td>
+          <td class="col-duration">6.46</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  firefox
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_change_currency[chrome]</td>
+          <td class="col-duration">5.11</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  chrome
+<br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_amazon_web.py::TestAmazonWeb::test_change_currency[firefox]</td>
+          <td class="col-duration">6.15</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>Browser:  firefox
 <br/> ----------------------------Captured stdout teardown---------------------------- <br/>Close driver
 <br/></div></td></tr></tbody></table></body></html>

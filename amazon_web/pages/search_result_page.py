@@ -6,6 +6,7 @@ from amazon_web.pages.product_page import ProductPage
 
 class SearchResultPage(BasePage):
     search_result = (By.CSS_SELECTOR, "[data-image-index='3']")
+    result_product_list = (By.CSS_SELECTOR, "data-csa-c-item-id")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -13,3 +14,4 @@ class SearchResultPage(BasePage):
     def click_search_result(self):
         self.click(self.search_result)
         return ProductPage(self.driver)
+

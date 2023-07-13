@@ -33,3 +33,26 @@ class TestAmazonWeb(BaseTest):
         shopping_cart_page = product_page.add_product_to_cart()
         actual_title = shopping_cart_page.get_product_title()
         assert actual_title.__contains__(TestData.product_title)
+
+    def test_increase_product_in_cart(self):
+        home_page = HomePage(self.driver)
+        search_result_page = home_page.open_result_page(TestData.search_text)
+        product_page = search_result_page.click_search_result()
+        shopping_cart_page = product_page.add_product_to_cart()
+        shopping_cart_page.choose_quantity()
+        actual_quantity = shopping_cart_page.get_value()
+        assert actual_quantity == TestData.quantity
+
+    def test_change_language(self):
+        home_page = HomePage(self.driver)
+        language_currency_setting_page = home_page.click_change_language_button()
+        language_currency_setting_page.choose_language()
+        actual_language = language_currency_setting_page.get_language_info()
+        assert actual_language == TestData.language
+
+    def test_change_currency(self):
+        home_page = HomePage(self.driver)
+        language_currency_setting_page = home_page.click_change_currency_button()
+        language_currency_setting_page.choose_currency()
+        actual_currency = language_currency_setting_page.get_currency_info()
+        assert actual_currency.__contains__(TestData.currency)

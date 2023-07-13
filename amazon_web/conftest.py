@@ -3,7 +3,7 @@ from selenium import webdriver
 from amazon_web.utils.test_data import TestData
 
 
-@pytest.fixture(params=["chrome"])
+@pytest.fixture(params=["chrome", "firefox"])
 def initialize_driver(request):
     if request.param == "chrome":
         driver = webdriver.Chrome()

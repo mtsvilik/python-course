@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 from amazon_web.pages.base_page import BasePage
+from amazon_web.pages.language_currency_setting_page import LanguageCurrencySettingPage
 from amazon_web.pages.login_page import LoginPage
 from amazon_web.pages.search_result_page import SearchResultPage
 from amazon_web.pages.shopping_cart_page import ShoppingCartPage
@@ -11,6 +12,8 @@ class HomePage(BasePage):
     shopping_cart_button = (By.ID, "nav-cart-count")
     search_field = (By.ID, "twotabsearchtextbox")
     search_button = (By.ID, "nav-search-submit-button")
+    language_button = (By.ID, "icp-nav-flyout")
+    currency_button = (By.ID, "icp-touch-link-cop")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -27,3 +30,11 @@ class HomePage(BasePage):
         self.set(self.search_field, search_text)
         self.click(self.search_button)
         return SearchResultPage(self.driver)
+
+    def click_change_language_button(self):
+        self.click(self.language_button)
+        return LanguageCurrencySettingPage(self.driver)
+
+    def click_change_currency_button(self):
+        self.click(self.currency_button)
+        return LanguageCurrencySettingPage(self.driver)

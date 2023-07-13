@@ -17,5 +17,13 @@ class BasePage:
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
         return element.text
 
+    def is_present(self, locator):
+        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
+        return bool(element)
+
+    def is_selected(self, locator):
+        element = WebDriverWait(self.driver, 10).until(EC.element_located_to_be_selected(locator))
+        return bool(element)
+
     def get_title(self):
         return self.driver.title
