@@ -10,6 +10,10 @@ class BasePage:
     def click(self, locator):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).click()
 
+    def get_elements(self, locator):
+        elements = WebDriverWait(self.driver, 30).until(EC.presence_of_all_elements_located(locator))
+        return elements
+
     def set(self, locator, value):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).send_keys(value)
 

@@ -35,6 +35,12 @@ class HomePage(BasePage):
         self.click(self.language_button)
         return LanguageCurrencySettingPage(self.driver)
 
+    def get_language(self):
+        return self.get_text(self.language_button)
+
+    def get_currency(self):
+        return self.get_text(self.currency_button)
+
     def click_change_currency_button(self):
         self.click(self.currency_button)
         return LanguageCurrencySettingPage(self.driver)
